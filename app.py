@@ -13,7 +13,7 @@ st.set_page_config(
 col1, col2 = st.columns(2)
 
 with col1:
-    st.image("profile-pic.jpg", width=230)
+    st.image("profile-pic.JPG", width=230)
     st.title("Hi, I'm Yug Bagrodia 👋")
     st.subheader("A Student and Coding Enthusiast from SIT Pune")
     st.write(
