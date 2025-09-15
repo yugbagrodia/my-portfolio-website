@@ -69,7 +69,7 @@ with st.expander("🏆 Project 1: Click here to see the Interactive Movie Visual
             - **What I Learned:** This project taught me how to handle data with Pandas, create interactive widgets with Streamlit (like this slider!), and visualize data with charts.
             """
         )
-        st.write("[View the dataset on GitHub](https://github.com/fivethirtyeight/data/tree/master/imdb)")
+        st.write("[View the dataset on GitHub](https://github.com/fivethirtyeight/data/blob/master/fandango/fandango_score_comparison.csv)")
 
     except FileNotFoundError:
         st.error("The 'movies.csv' file was not found. Please make sure it's in the same folder as app.py.")
