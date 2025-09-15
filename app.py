@@ -13,13 +13,13 @@ st.set_page_config(
 col1, col2 = st.columns(2)
 
 with col1:
-    # You can upload an image to your folder and change "profile-pic.png"
-    st.image("profile-pic.jpg", width=200)
-    st.title("Hi, I'm [Yug Bagrodia] 👋")
+    st.image("profile-pic.jpg", width=230)
+    st.title("Hi, I'm Yug Bagrodia 👋")
     st.subheader("A Student and Coding Enthusiast from SIT Pune")
     st.write(
         """
-        I am passionate about using Python to solve problems and build interesting applications. 
+        I am a highly motivated and intellectually curious AIML undergraduate at Symbiosis Institute of Technology, Pune, with a forward-thinking mindset and a growing portfolio.
+        I am passionate to solve problems and build interesting applications. 
         This portfolio is my first venture into web development, built entirely with Python!
         """
     )
@@ -34,16 +34,16 @@ st.subheader("My Skills")
 st.write(
     """
     - **Programming:** Python
-    - **Libraries:** Pandas, NumPy
+    - **Libraries:** Streamlit, Pandas, Basics of NumPy
     - **Databases:** MySQL
-    - **Tools:** Git, GitHub, VS Code
+    - **Tools:** Git, GitHub, VS Code, Jupyter Notebook
     """
 )
 
 # --- PROJECTS ---
 st.write("---")
 st.subheader("My Projects")
-st.write("Here is a project I built to practice my Python data analysis and visualization skills.")
+st.write("Here are the projects I built to practice my Python data analysis and visualization skills.")
 
 # Create an expander for the project
 with st.expander("🏆 Project 1: Click here to see the Interactive Movie Visualizer"):
@@ -73,6 +73,54 @@ with st.expander("🏆 Project 1: Click here to see the Interactive Movie Visual
 
     except FileNotFoundError:
         st.error("The 'movies.csv' file was not found. Please make sure it's in the same folder as app.py.")
+
+# --- PROJECT 2: A SIMPLE CALCULATOR APP ---
+with st.expander("🏆 Project 2: Click here to see the Simple Calculator"):
+
+    st.write(
+        """
+        - **What I Did:** I built a functional calculator using Streamlit's interactive widgets.
+        - **What I Learned:** This project taught me how to handle user input with buttons and number fields, perform calculations, and manage the display of results, including handling potential errors like division by zero.
+        """
+    )
+
+    # --- CALCULATOR LOGIC ---
+    
+    # Get user input for two numbers
+    num1 = st.number_input("Enter the first number", value=0.0)
+    num2 = st.number_input("Enter the second number", value=0.0)
+
+    # Create four columns for the four operation buttons
+    col1, col2, col3, col4 = st.columns(4)
+
+    # Add button
+    with col1:
+        if st.button("Add (+)"):
+            result = num1 + num2
+            st.success(f"Result: {num1} + {num2} = {result}")
+
+    # Subtract button
+    with col2:
+        if st.button("Subtract (-)"):
+            result = num1 - num2
+            st.success(f"Result: {num1} - {num2} = {result}")
+
+    # Multiply button
+    with col3:
+        if st.button("Multiply (*)"):
+            result = num1 * num2
+            st.success(f"Result: {num1} * {num2} = {result}")
+
+    # Divide button
+    with col4:
+        if st.button("Divide (/)"):
+            # Handle the error for division by zero
+            if num2 != 0:
+                result = num1 / num2
+                st.success(f"Result: {num1} / {num2} = {result}")
+            else:
+                st.error("Error: Cannot divide by zero.")
+
 
 # --- CONTACT ---
 st.write("---")
